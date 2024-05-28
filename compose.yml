@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    expose:
+      - "8000:8000"
+    ports:
+      - "8000:8000"
+    environment:
+      - key=c5cd6c37edb1c5475bc20e0fde53c5c9
+
+  frontend:
+    build: ./frontend
+    expose:
+      - "5000:5000"
+    ports:
+      - "5000:5000"
+
+    depends_on:
+      - backend
+    environment:
+      - BACKEND_URL=http://backend:8000

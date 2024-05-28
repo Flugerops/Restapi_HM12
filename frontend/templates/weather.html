@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="weather-info">
+    <ul>
+      <li>Температура: {{ context.temperature }}°C</li>
+      <li>Вологість: {{ context.humidity }}%</li>
+      <li>Вітер: {{ context.wind_speed }} м/с</li>
+    </ul>
+  </div>
+{% endblock %}
